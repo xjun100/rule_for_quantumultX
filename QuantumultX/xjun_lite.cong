@@ -130,12 +130,12 @@ server=/*.xiaomi.com/119.29.29.29
 ;组名：🏠 SSID Group
 ;蜂窝网下默认策略：🇭🇰 HK Group， Wi-Fi下默认策略：🇭🇰 HK Group
 ;ASUS_5G 这个 Wi-Fi下走：🇲🇴 MO Group ， AMG-5G 这个 Wi-Fi下走直连：direct
-; AUSS_5G 跟 AMG-5G 是我的 Wi-Fi 名字，而 🇭🇰 HK Group, 🇲🇴 MO Group是我的策略组 ；
+;AUSS_5G 跟 AMG-5G 是我的 Wi-Fi 名字，而 🇭🇰 HK Group, 🇲🇴 MO Group是我的策略组 ；
 ; 请按需改成你自己的节点或策略组，别傻乎乎直接全部照搬。。。
 
-static=🚀 节点选择, proxy, direct, ♻️ 自动选择, 🔮 负载均衡, img-url=https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Available.png
+static=🚀 节点选择, proxy, direct, ♻️ 自动选择, img-url=https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Available.png
 url-latency-benchmark=♻️ 自动选择, gia-vmess, jp-vmess, aliyun04, img-url=https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Auto.png
-round-robin=🔮 负载均衡, gia-vmess, jp-vmess, aliyun04, server-tag-regex=.*, img-url=https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Round_Robin.png
+#round-robin=🔮 负载均衡, gia-vmess, jp-vmess, aliyun04, server-tag-regex=.*, img-url=https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Round_Robin.png
 
 #自定义
 # 其中 CMedia 策略组为中国媒体，GMedia 为国际媒体，Outside 为境外链接，Mainland 为大陆链接，Others 为最终规则
@@ -143,13 +143,13 @@ static=AdBlock, reject, direct, img-url=https://raw.githubusercontent.com/Sempor
 static=Apple, direct, Outside, 🚀 节点选择,img-url=https://raw.githubusercontent.com/GeQ1an/Rules/master/QuantumultX/IconSet/Apple.png
 static=AppleIOSUpdate, reject, direct, img-url=https://raw.githubusercontent.com/Semporia/Hand-Painted-icon/master/Social_Media/Apple.png
 static=Microsoft, direct, Outside, 🚀 节点选择,img-url=https://raw.githubusercontent.com/GeQ1an/Rules/master/QuantumultX/IconSet/Microsoft.png
-static=Netflix, Outside, direct, 🚀 节点选择, ♻️ 自动选择, 🔮 负载均衡, gia-vmess, jp-vmess, aliyun04, img-url=https://raw.githubusercontent.com/Semporia/Hand-Painted-icon/master/Universal/Netflix.png
-static=YouTube, Outside, direct, 🚀 节点选择, ♻️ 自动选择, 🔮 负载均衡, gia-vmess, jp-vmess, aliyun04, img-url=https://raw.githubusercontent.com/Semporia/Hand-Painted-icon/master/Social_Media/YouTube.png
-static=Spotify, Outside, proxy, direct, 🚀 节点选择, ♻️ 自动选择, 🔮 负载均衡, gia-vmess, jp-vmess, aliyun04, img-url=https://raw.githubusercontent.com/Semporia/Hand-Painted-icon/master/Social_Media/Spotify.png
-static=GMedia, Outside, direct, 🚀 节点选择, ♻️ 自动选择, 🔮 负载均衡, gia-vmess, jp-vmess, aliyun04, img-url=https://raw.githubusercontent.com/GeQ1an/Rules/master/QuantumultX/IconSet/GMedia.png
+static=Netflix, Outside, direct, 🚀 节点选择, ♻️ 自动选择, gia-vmess, jp-vmess, aliyun04, img-url=https://raw.githubusercontent.com/Semporia/Hand-Painted-icon/master/Universal/Netflix.png
+static=YouTube, Outside, direct, 🚀 节点选择, ♻️ 自动选择, gia-vmess, jp-vmess, aliyun04, img-url=https://raw.githubusercontent.com/Semporia/Hand-Painted-icon/master/Social_Media/YouTube.png
+static=Spotify, Outside, proxy, direct, 🚀 节点选择, ♻️ 自动选择, gia-vmess, jp-vmess, aliyun04, img-url=https://raw.githubusercontent.com/Semporia/Hand-Painted-icon/master/Social_Media/Spotify.png
+static=GMedia, Outside, direct, 🚀 节点选择, ♻️ 自动选择, gia-vmess, jp-vmess, aliyun04, img-url=https://raw.githubusercontent.com/GeQ1an/Rules/master/QuantumultX/IconSet/GMedia.png
 static=CMedia, direct, proxy, img-url=https://raw.githubusercontent.com/GeQ1an/Rules/master/QuantumultX/IconSet/CMedia.png
-static=Speedtest, Outside, direct, 🚀 节点选择, ♻️ 自动选择, 🔮 负载均衡, gia-vmess, jp-vmess, aliyun04, img-url=https://raw.githubusercontent.com/Semporia/Hand-Painted-icon/master/Universal/Speedtest.png
-static=Outside, proxy, direct, 🚀 节点选择, ♻️ 自动选择, 🔮 负载均衡, gia-vmess, jp-vmess, aliyun04, img-url=https://raw.githubusercontent.com/Semporia/Hand-Painted-icon/master/Universal/Final.png
+static=Speedtest, Outside, direct, 🚀 节点选择, ♻️ 自动选择, gia-vmess, jp-vmess, aliyun04, img-url=https://raw.githubusercontent.com/Semporia/Hand-Painted-icon/master/Universal/Speedtest.png
+static=Outside, proxy, direct, 🚀 节点选择, ♻️ 自动选择, gia-vmess, jp-vmess, aliyun04, img-url=https://raw.githubusercontent.com/Semporia/Hand-Painted-icon/master/Universal/Final.png
 static=Mainland, direct, proxy, img-url=https://raw.githubusercontent.com/Semporia/Hand-Painted-icon/master/Rounded_Rectangle/China.png
 static=Fianl, Outside, direct, 🚀 节点选择, img-url=https://raw.githubusercontent.com/GeQ1an/Rules/master/QuantumultX/IconSet/Others.png
 
