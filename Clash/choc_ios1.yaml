@@ -386,14 +386,14 @@ rule-providers:
     path: ./Rules/LAN
     interval: 86400
 proxies:
-  - {name: gia, server: gia.bixjun.cf, port: 8002, type: trojan, password: FQBfLpyDRz, sni: gia.bixjun.cf, skip-cert-verify: false}
-  - {name: iij, server: iij.bixjun.cf, port: 8101, type: trojan, password: IICn4TSDgv, sni: iij.bixjun.cf, skip-cert-verify: false}
-  - {name: osaka, server: osaka.bixjun.cf, port: 8001, type: trojan, password: KqPkB9cNWL, sni: osaka.bixjun.cf, skip-cert-verify: false}
-  - {name: aliyun, server: aliyunhk.bixjun.cf, port: 8002, type: trojan, password: kM4i70Bw4q, sni: aliyunhk.bixjun.cf, skip-cert-verify: false}
-  - {name: virmach, server: vir4.bixjun.cf, port: 8004, type: trojan, password: E1FxUFwned, sni: vir4.bixjun.cf, skip-cert-verify: false}
-  - {name: licloud, server: li.bixjun.cf, port: 443, type: trojan, password: 33X3UPjGtA, sni: li.bixjun.cf, skip-cert-verify: false}
-  - {name: spart, server: spart.bixjun.cf, port: 8102, type: trojan, password: MqjLrjuWuR, sni: spart.bixjun.cf, skip-cert-verify: false}
-  - {name: aliyun_vmess, server: aliyunhk.bixjun.cf, port: 8004, type: vmess, uuid: 1b77f471-e9df-4ec6-effb-c5a5164f4126, alterId: 0, cipher: auto, tls: true, skip-cert-verify: false, udp: true}
+  - {name: gia, server: gia.bixjun.cf, port: 98002, type: trojan, password: FQBfLpyDRz, sni: gia.bixjun.cf, skip-cert-verify: false}
+  - {name: iij, server: iij.bixjun.cf, port: 98101, type: trojan, password: IICn4TSDgv, sni: iij.bixjun.cf, skip-cert-verify: false}
+  - {name: osaka, server: osaka.bixjun.cf, port: 98001, type: trojan, password: KqPkB9cNWL, sni: osaka.bixjun.cf, skip-cert-verify: false}
+  - {name: aliyun, server: aliyunhk.bixjun.cf, port: 98002, type: trojan, password: kM4i70Bw4q, sni: aliyunhk.bixjun.cf, skip-cert-verify: false}
+  - {name: virmach, server: vir4.bixjun.cf, port: 98004, type: trojan, password: E1FxUFwned, sni: vir4.bixjun.cf, skip-cert-verify: false}
+  - {name: licloud, server: li.bixjun.cf, port: 9443, type: trojan, password: 33X3UPjGtA, sni: li.bixjun.cf, skip-cert-verify: false}
+  - {name: spart, server: spart.bixjun.cf, port: 98102, type: trojan, password: MqjLrjuWuR, sni: spart.bixjun.cf, skip-cert-verify: false}
+  - {name: aliyun_vmess, server: aliyunhk.bixjun.cf, port: 98004, type: vmess, uuid: 1b77f471-e9df-4ec6-effb-c5a5164f4126, alterId: 0, cipher: auto, tls: true, skip-cert-verify: false, udp: true}
 proxy-groups:
   - name: 🚀 节点选择
     type: select
