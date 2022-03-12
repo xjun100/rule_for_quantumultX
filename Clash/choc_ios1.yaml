@@ -399,7 +399,6 @@ proxy-groups:
     type: select
     proxies:
       - ♻️ 自动选择
-      - DIRECT
       - gia
       - iij
       - osaka
@@ -480,14 +479,6 @@ proxy-groups:
   - name: 🐟 兜底政策
     type: select
     proxies:
-      - 🚀 节点选择
       - 🎯 直连政策
+      - 🚀 节点选择
       - ♻️ 自动选择
-      - gia
-      - iij
-      - osaka
-      - aliyun
-      - virmach
-      - licloud
-      - spart
-      - aliyun_vmess
