@@ -168,7 +168,7 @@ rule-providers:
     url: "https://cdn.jsdelivr.net/gh/Loyalsoldier/clash-rules@release/icloud.txt"
     path: ./ruleset/icloud.yaml
     interval: 86400
-  Google:
+  oogle:
     behavior: "domain"
     type: http
     url: "https://raw.githubusercontent.com/Loyalsoldier/clash-rules/release/google.txt"
@@ -203,12 +203,6 @@ rule-providers:
     behavior: domain
     url: "https://cdn.jsdelivr.net/gh/Loyalsoldier/clash-rules@release/tld-not-cn.txt"
     path: ./ruleset/tld-not-cn.yaml
-    interval: 86400
-  private:
-    type: http
-    behavior: domain
-    url: "https://cdn.jsdelivr.net/gh/Loyalsoldier/clash-rules@release/private.txt"
-    path: ./ruleset/private.yaml
     interval: 86400
   direct:
     behavior: "domain"
@@ -289,13 +283,12 @@ rules:
  - RULE-SET,adblock,🛑 广告拦截
  - RULE-SET,apple,🍎 苹果服务
  - RULE-SET,icloud,🍎 苹果服务
- - RULE-SET,Gooelg,🌍 全球加速
+ - RULE-SET,google,🌍 全球加速
  - RULE-SET,outside,🌍 全球加速
  - RULE-SET,telegramcidr,📲电报信息
  - RULE-SET,greatfire,🌍 全球加速
  - RULE-SET,gfw,🌍 全球加速
  - RULE-SET,tld-not-cn,🌍 全球加速
- - RULE-SET,private,🎯 全球直连 
  - RULE-SET,direct,🎯 全球直连
  - RULE-SET,cncidr,🎯 全球直连
  - RULE-SET,lancidr,🎯 全球直连
