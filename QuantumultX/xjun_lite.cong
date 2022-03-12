@@ -72,11 +72,16 @@ geo_location_checker=http://api.live.bilibili.com/ip_service/v1/ip_service/get_i
 [dns]
 no-system
 no-ipv6
-server=119.29.29.29
+server=180.76.76.76
 server=223.5.5.5
-server=8.8.8.8
+server=119.29.29.29
+server=101.6.6.6
 server=114.114.114.114
-server=8.8.4.4:53
+server=114.114.114.114
+server=8.8.8.8
+server=9.9.9.9
+server=1.1.1.1
+
 ;指定域名解析dns
 server=/*.taobao.com/223.5.5.5
 server=/*.tmall.com/223.5.5.5
@@ -96,6 +101,8 @@ server=/*.127.net/119.29.29.29
 server=/*.netease.com/119.29.29.29
 server=/*.mi.com/119.29.29.29
 server=/*.xiaomi.com/119.29.29.29
+server=/*.google.com/8.8.8.8
+server=/*.youtube.com/8.8.8.8
 ;server=/*testflight.apple.com/23.76.66.98
 ;server=/example0.com/system
 ;server=/example1.com/8.8.4.4
@@ -135,7 +142,7 @@ server=/*.xiaomi.com/119.29.29.29
 
 static=🚀 节点选择, proxy, direct, ♻️ 自动选择, img-url=https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Available.png
 url-latency-benchmark=♻️ 自动选择, gia-vmess, jp-vmess, aliyun04, img-url=https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Auto.png
-#round-robin=🔮 负载均衡, gia-vmess, jp-vmess, aliyun04, server-tag-regex=.*, img-url=https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Round_Robin.png
+#round-robin=🔮 负载均衡, server-tag-regex=.*, img-url=https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Round_Robin.png
 
 #自定义
 # 其中 CMedia 策略组为中国媒体，GMedia 为国际媒体，Outside 为境外链接，Mainland 为大陆链接，Others 为最终规则
@@ -143,13 +150,13 @@ static=AdBlock, reject, direct, img-url=https://raw.githubusercontent.com/Sempor
 static=Apple, direct, Outside, 🚀 节点选择,img-url=https://raw.githubusercontent.com/GeQ1an/Rules/master/QuantumultX/IconSet/Apple.png
 static=AppleIOSUpdate, reject, direct, img-url=https://raw.githubusercontent.com/Semporia/Hand-Painted-icon/master/Social_Media/Apple.png
 static=Microsoft, direct, Outside, 🚀 节点选择,img-url=https://raw.githubusercontent.com/GeQ1an/Rules/master/QuantumultX/IconSet/Microsoft.png
-static=Netflix, Outside, direct, 🚀 节点选择, ♻️ 自动选择, gia-vmess, jp-vmess, aliyun04, img-url=https://raw.githubusercontent.com/Semporia/Hand-Painted-icon/master/Universal/Netflix.png
-static=YouTube, Outside, direct, 🚀 节点选择, ♻️ 自动选择, gia-vmess, jp-vmess, aliyun04, img-url=https://raw.githubusercontent.com/Semporia/Hand-Painted-icon/master/Social_Media/YouTube.png
-static=Spotify, Outside, proxy, direct, 🚀 节点选择, ♻️ 自动选择, gia-vmess, jp-vmess, aliyun04, img-url=https://raw.githubusercontent.com/Semporia/Hand-Painted-icon/master/Social_Media/Spotify.png
-static=GMedia, Outside, direct, 🚀 节点选择, ♻️ 自动选择, gia-vmess, jp-vmess, aliyun04, img-url=https://raw.githubusercontent.com/GeQ1an/Rules/master/QuantumultX/IconSet/GMedia.png
+static=Netflix, Outside, direct, 🚀 节点选择, ♻️ 自动选择, us, tokyo, osaka, hongkong, img-url=https://raw.githubusercontent.com/Semporia/Hand-Painted-icon/master/Universal/Netflix.png
+static=YouTube, Outside, direct, 🚀 节点选择, ♻️ 自动选择, us, tokyo, osaka, hongkong, img-url=https://raw.githubusercontent.com/Semporia/Hand-Painted-icon/master/Social_Media/YouTube.png
+static=Spotify, Outside, proxy, direct, 🚀 节点选择, ♻️ 自动选择, us, tokyo, osaka, hongkong, img-url=https://raw.githubusercontent.com/Semporia/Hand-Painted-icon/master/Social_Media/Spotify.png
+static=GMedia, Outside, direct, 🚀 节点选择, ♻️ 自动选择, us, tokyo, osaka, hongkong, img-url=https://raw.githubusercontent.com/GeQ1an/Rules/master/QuantumultX/IconSet/GMedia.png
 static=CMedia, direct, proxy, img-url=https://raw.githubusercontent.com/GeQ1an/Rules/master/QuantumultX/IconSet/CMedia.png
-static=Speedtest, Outside, direct, 🚀 节点选择, ♻️ 自动选择, gia-vmess, jp-vmess, aliyun04, img-url=https://raw.githubusercontent.com/Semporia/Hand-Painted-icon/master/Universal/Speedtest.png
-static=Outside, proxy, direct, 🚀 节点选择, ♻️ 自动选择, gia-vmess, jp-vmess, aliyun04, img-url=https://raw.githubusercontent.com/Semporia/Hand-Painted-icon/master/Universal/Final.png
+static=Speedtest, Outside, direct, 🚀 节点选择, ♻️ 自动选择, us, tokyo, osaka, hongkong, img-url=https://raw.githubusercontent.com/Semporia/Hand-Painted-icon/master/Universal/Speedtest.png
+static=Outside, proxy, direct, 🚀 节点选择, ♻️ 自动选择, us, tokyo, osaka, hongkong, img-url=https://raw.githubusercontent.com/Semporia/Hand-Painted-icon/master/Universal/Final.png
 static=Mainland, direct, proxy, img-url=https://raw.githubusercontent.com/Semporia/Hand-Painted-icon/master/Rounded_Rectangle/China.png
 static=Fianl, Outside, direct, 🚀 节点选择, img-url=https://raw.githubusercontent.com/GeQ1an/Rules/master/QuantumultX/IconSet/Others.png
 
@@ -228,9 +235,10 @@ https://raw.githubusercontent.com/DivineEngine/Profiles/master/Quantumult/Rewrit
 [server_local]
 # Optional field tls13 is only for shadowsocks obfs=wss
 #手动添加节点配置
-vmess = gia.bixjun.cf:8004, method=chacha20-ietf-poly1305, password=9997f0638e7-3f83-4ed0-886f-7bfcc277c86e, obfs=over-tls, obfs-host=gia.bixjun.cf, fast-open=false, tag=gia-vmess
-vmess = iij.bixjun.cf:443, method=chacha20-ietf-poly1305, password=9991f35e1e5-af92-40f5-836f-f94197cd3468, obfs=over-tls, obfs-host=iij.bixjun.cf, fast-open=false, tag=jp-vmess
-vmess = aliyunhk.bixjun.cf:8004, method=chacha20-ietf-poly1305, password=9991b77f471-e9df-4ec6-effb-c5a5164f4126, obfs=over-tls, obfs-host=aliyunhk.bixjun.cf, fast-open=false, tag=aliyun04
+vmess = gia.bixjun.cf:8004, method=chacha20-ietf-poly1305, password=7f0638e7-3f83-4ed0-886f-7bfcc277c86e, obfs=over-tls, obfs-host=gia.bixjun.cf, fast-open=false, tag=us
+vmess = iij.bixjun.cf:443, method=chacha20-ietf-poly1305, password=1f35e1e5-af92-40f5-836f-f94197cd3468, obfs=over-tls, obfs-host=iij.bixjun.cf, fast-open=false, tag=tokyo
+vmess = osaka.bixjun.cf:443, method=chacha20-ietf-poly1305, password=76d961c4-6599-4b6e-d08f-d7aa36fc0e90, obfs=over-tls, obfs-host=osaka.bixjun.cf, fast-open=false, tag=osaka
+vmess = aliyunhk.bixjun.cf:8004, method=chacha20-ietf-poly1305, password=1b77f471-e9df-4ec6-effb-c5a5164f4126, obfs=over-tls, obfs-host=aliyunhk.bixjun.cf, fast-open=false, tag=hongkong
 
 ;shadowsocks=example.com:80, method=chacha20, password=pwd, obfs=http, obfs-host=bing.com, obfs-uri=/resource/file, fast-open=false, udp-relay=false, server_check_url=http://www.apple.com/generate_204, tag=ss-01
 ;shadowsocks=example.com:80, method=chacha20, password=pwd, obfs=http, obfs-host=bing.com, obfs-uri=/resource/file, fast-open=false, udp-relay=false, tag=ss-02
