@@ -285,7 +285,7 @@ rules:
  - RULE-SET,icloud,🍎 苹果服务
  - RULE-SET,google,🌍 全球加速
  - RULE-SET,outside,🌍 全球加速
- - RULE-SET,telegramcidr,📲电报信息
+ - RULE-SET,telegramcidr,📲 电报信息
  - RULE-SET,greatfire,🌍 全球加速
  - RULE-SET,gfw,🌍 全球加速
  - RULE-SET,tld-not-cn,🌍 全球加速
