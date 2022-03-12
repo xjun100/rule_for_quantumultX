@@ -141,7 +141,7 @@ server=/*.youtube.com/8.8.8.8
 ; 请按需改成你自己的节点或策略组，别傻乎乎直接全部照搬。。。
 
 static=🚀 节点选择, proxy, direct, ♻️ 自动选择, img-url=https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Available.png
-url-latency-benchmark=♻️ 自动选择, gia-vmess, jp-vmess, aliyun04, img-url=https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Auto.png
+url-latency-benchmark=♻️ 自动选择, us, tokyo, osaka, hongkong, img-url=https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Auto.png
 #round-robin=🔮 负载均衡, server-tag-regex=.*, img-url=https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Round_Robin.png
 
 #自定义
