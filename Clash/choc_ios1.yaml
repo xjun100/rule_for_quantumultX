@@ -82,7 +82,7 @@ proxy-groups:
       - licloud
       - spart
       - aliyun_vmess
-  - name: 🌍 国外媒体
+  - name: 🌍 全球加速
     type: select
     proxies:
       - ♻️ 自动选择
@@ -95,13 +95,7 @@ proxy-groups:
       - licloud
       - spart
       - aliyun_vmess
-  - name: 🌏 国内媒体
-    type: select
-    proxies:
-      - DIRECT
-      - ♻️ 自动选择
-      - 🔰 节点选择
-  - name: Ⓜ️ 微软服务
+  - name: 🎯 国内应用
     type: select
     proxies:
       - DIRECT
@@ -140,19 +134,6 @@ proxy-groups:
       - DIRECT
       - ♻️ 自动选择
       - 🔰 节点选择
-  - name: 🌍 全球加速
-    type: select
-    proxies:
-      - ♻️ 自动选择
-      - 🔰 节点选择
-      - gia
-      - iij
-      - osaka
-      - aliyun
-      - virmach
-      - licloud
-      - spart
-      - aliyun_vmess
   - name: 🛑 广告拦截
     type: select
     proxies:
@@ -318,6 +299,6 @@ rules:
  - RULE-SET,direct,🎯 全球直连
  - RULE-SET,cncidr,🎯 全球直连
  - RULE-SET,lancidr,🎯 全球直连
- - RULE-SET,applications,🎯 全球直连
+ - RULE-SET,applications,🎯 国内应用
  - GEOIP,CN,DIRECT
  - MATCH,🐟 漏网之鱼
