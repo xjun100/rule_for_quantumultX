@@ -255,7 +255,7 @@ rule-providers:
     interval: 86400
 
 rules:
- - DOMAIN-SUFFIX,local,🎯 全球直连  
+ - DOMAIN-SUFFIX,local,DIRECT
  - DOMAIN,clash.razord.top,DIRECT
  - DOMAIN,yacd.haishan.me,DIRECT
  - IP-CIDR,192.168.0.0/16,🎯 全球直连,no-resolve
@@ -267,36 +267,36 @@ rules:
  - IP-CIDR6,fc00::/7,🎯 全球直连,no-resolve
  - IP-CIDR6,fe80::/10,🎯 全球直连,no-resolve
  - IP-CIDR6,fd00::/8,🎯 全球直连,no-resolve
- - DOMAIN,i.snssdk.com,🛑 小说广告
- - DOMAIN,i-lq.snssdk.com,🛑 小说广告
- - DOMAIN,dig.bdurl.net,🛑 小说广告
- - DOMAIN,api-access.pangolin-sdk-toutiao.com,🛑 小说广告
- - DOMAIN-SUFFIX,zijieapi.com,🛑 小说广告
- - DOMAIN-SUFFIX,pglstatp-toutiao.com,🛑 小说广告
- - DOMAIN-SUFFIX,pstatp.com,🛑 小说广告
- - DOMAIN-SUFFIX,xwuad.com,🛑 小说广告
- - DOMAIN-SUFFIX,tobapplog.ctobsnssdk.com,🛑 小说广告
- - DOMAIN-SUFFIX,render.shuqireader.com,🛑 小说广告
- - DOMAIN-SUFFIX,ali-stats.jpush.cn,🛑 小说广告
- - DOMAIN-SUFFIX,toblog.ctobsnssdk.com,🛑 小说广告
- - DOMAIN-SUFFIX,sdk.kaijia.com,🛑 小说广告
- - DOMAIN-SUFFIX,tobapplog.ctobsnssdk.com,🛑 小说广告
+ - DOMAIN,i.snssdk.com,🛑 广告拦截
+ - DOMAIN,i-lq.snssdk.com,🛑 广告拦截
+ - DOMAIN,dig.bdurl.net,🛑 广告拦截
+ - DOMAIN,api-access.pangolin-sdk-toutiao.com,🛑 广告拦截
+ - DOMAIN-SUFFIX,zijieapi.com,🛑 广告拦截
+ - DOMAIN-SUFFIX,pglstatp-toutiao.com,🛑 广告拦截
+ - DOMAIN-SUFFIX,pstatp.com,🛑 广告拦截
+ - DOMAIN-SUFFIX,xwuad.com,🛑 广告拦截
+ - DOMAIN-SUFFIX,tobapplog.ctobsnssdk.com,🛑 广告拦截
+ - DOMAIN-SUFFIX,render.shuqireader.com,🛑 广告拦截
+ - DOMAIN-SUFFIX,ali-stats.jpush.cn,🛑 广告拦截
+ - DOMAIN-SUFFIX,toblog.ctobsnssdk.com,🛑 广告拦截
+ - DOMAIN-SUFFIX,sdk.kaijia.com,🛑 广告拦截
+ - DOMAIN-SUFFIX,tobapplog.ctobsnssdk.com,🛑 广告拦截
  - DOMAIN-SUFFIX,amdc.m.taobao.com,🛑 广告拦截
  - DOMAIN-SUFFIX,iyes.youku.com,🛑 广告拦截
  - DOMAIN-SUFFIX,sq.sljkj.com,🛑 广告拦截
  - DOMAIN-SUFFIX,s2s.adjust.com,🛑 广告拦截
- - DOMAIN,app.zhoudamozi.com,DIRECT
- - DOMAIN-SUFFIX,youzibank.com,DIRECT
- - DOMAIN,book.jieshengdz.com,DIRECT
- - DOMAIN,tttxt.douyinxiaocx.com,DIRECT
+ - DOMAIN,app.zhoudamozi.com,🎯 全球直连
+ - DOMAIN-SUFFIX,youzibank.com,🎯 全球直连
+ - DOMAIN,book.jieshengdz.com,🎯 全球直连
+ - DOMAIN,tttxt.douyinxiaocx.com,🎯 全球直连
  - DOMAIN,dm.bytedance.com,🛑 广告拦截
  - DOMAIN,ap.cpatrk.net,🛑 广告拦截
- - DOMAIN,is.snssdk.com,🛑 小说广告
- - DOMAIN-SUFFIX,mituyuedu.com,DIRECT
- - DOMAIN,img.allahall.com,DIRECT
- - DOMAIN,img.dailmo.com,DIRECT
- - DOMAIN,img.img.hbssdlcl.com,DIRECT
- - DOMAIN,activation.crossutility.com,DIRECT
+ - DOMAIN,is.snssdk.com,🛑 广告拦截
+ - DOMAIN-SUFFIX,mituyuedu.com,🎯 全球直连
+ - DOMAIN,img.allahall.com,🎯 全球直连
+ - DOMAIN,img.dailmo.com,🎯 全球直连
+ - DOMAIN,img.img.hbssdlcl.com,🎯 全球直连
+ - DOMAIN,activation.crossutility.com,🎯 全球直连
  - DOMAIN,bid.adview.cn,🛑 广告拦截
  - DOMAIN-KEYWORD,aria2,🎯 全球直连
  - DOMAIN-KEYWORD,xunlei,🎯 全球直连
@@ -319,5 +319,5 @@ rules:
  - RULE-SET,cncidr,🎯 全球直连
  - RULE-SET,lancidr,🎯 全球直连
  - RULE-SET,applications,🎯 全球直连
- - GEOIP,CN,🎯 全球直连
+ - GEOIP,CN,DIRECT
  - MATCH,🐟 漏网之鱼
