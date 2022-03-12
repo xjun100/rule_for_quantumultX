@@ -1,67 +1,405 @@
-port: 8080
-socks-port: 7891
-allow-lan: true
-mode: Rule
-log-level: info
+port: 8888
+socks-port: 8889
+mixed-port: 8899
+mode: rule
+log-level: error
 external-controller: 127.0.0.1:9090
-# 绕过系统代理
-bypass:
-    - qq.com
-    - taobao.com
-    - music.163.com
-    - '*.music.126.net'
-    - localhost
-    - 127.*
-    - 10.*
-    - 172.16.*
-    - 172.17.*
-    - 172.18.*
-    - 172.19.*
-    - 172.20.*
-    - 172.21.*
-    - 172.22.*
-    - 172.23.*
-    - 172.24.*
-    - 172.25.*
-    - 172.26.*
-    - 172.27.*
-    - 172.28.*
-    - 172.29.*
-    - 172.30.*
-    - 172.31.*
-    - 192.168.*
-    - <local>
-# tap真全局模式
-cfw-latency-timeout: 5000
 dns:
-   enable: true
-   enhanced-mode: redir-host
-   listen: 0.0.0.0:53
-   nameserver:
-      - 180.76.76.76
-      - 223.5.5.5
-      - 119.29.29.29
-      - 101.6.6.6
-      - 114.114.114.114
-      - 8.8.8.8
-      - 8.8.4.4
-      - 9.9.9.9
-      - 1.1.1.1
+  enable: true
+  listen: 0.0.0.0:53
+  default-nameserver:
+    - 114.114.114.114
+    - 8.8.8.8
+  enhanced-mode: redir-host
+  nameserver:
+    - 114.114.114.114
+    - 8.8.8.8
+    - tls://dns.rubyfish.cn:853
+    - https://1.1.1.1/dns-query
+rules:
+  - RULE-SET,Netflix,🌍 国外媒体
+  - RULE-SET,Spotify,🌍 国外媒体
+  - RULE-SET,YouTube,🌍 国外媒体
+  - RULE-SET,Disney Plus,🌍 国外媒体
+  - RULE-SET,Bilibili,🎯 直连政策
+  - RULE-SET,IQ,🎯 直连政策
+  - RULE-SET,IQIYI,🎯 直连政策
+  - RULE-SET,Letv,🎯 直连政策
+  - RULE-SET,Netease Music,🎯 直连政策
+  - RULE-SET,Tencent Video,🎯 直连政策
+  - RULE-SET,Youku,🎯 直连政策
+  - RULE-SET,WeTV,🎯 直连政策
+  - RULE-SET,ABC,🌍 国外媒体
+  - RULE-SET,Abema TV,🌍 国外媒体
+  - RULE-SET,Amazon,🌍 国外媒体
+  - RULE-SET,Apple News,🌍 国外媒体
+  - RULE-SET,Apple TV,🌍 国外媒体
+  - RULE-SET,Bahamut,🌍 国外媒体
+  - RULE-SET,BBC iPlayer,🌍 国外媒体
+  - RULE-SET,DAZN,🌍 国外媒体
+  - RULE-SET,Discovery Plus,🌍 国外媒体
+  - RULE-SET,encoreTVB,🌍 国外媒体
+  - RULE-SET,Fox Now,🌍 国外媒体
+  - RULE-SET,Fox+,🌍 国外媒体
+  - RULE-SET,HBO Max,🌍 国外媒体
+  - RULE-SET,Hulu Japan,🌍 国外媒体
+  - RULE-SET,Hulu,🌍 国外媒体
+  - RULE-SET,Japonx,🌍 国外媒体
+  - RULE-SET,JOOX,🌍 国外媒体
+  - RULE-SET,KKBOX,🌍 国外媒体
+  - RULE-SET,KKTV,🌍 国外媒体
+  - RULE-SET,Line TV,🌍 国外媒体
+  - RULE-SET,myTV SUPER,🌍 国外媒体
+  - RULE-SET,Pandora,🌍 国外媒体
+  - RULE-SET,PBS,🌍 国外媒体
+  - RULE-SET,Pornhub,🌍 国外媒体
+  - RULE-SET,Soundcloud,🌍 国外媒体
+  - RULE-SET,ViuTV,🌍 国外媒体
+  - RULE-SET,Reject,🆎 广告拦截
+  - RULE-SET,Special,🎯 直连政策
+  - RULE-SET,Telegram,📲 电报信息
+  - RULE-SET,Speedtest,🚀 节点选择
+  - RULE-SET,Apple,🍎 苹果服务
+  - RULE-SET,PROXY,🚀 节点选择
+  - RULE-SET,Domestic,🎯 直连政策
+  - RULE-SET,Domestic IPs,🎯 直连政策
+  - RULE-SET,LAN,🎯 直连政策
+  - GEOIP,CN,🎯 直连政策
+  - MATCH,🐟 兜底政策
+rule-providers:
+  Reject:
+    type: http
+    behavior: classical
+    url: https://cdn.jsdelivr.net/gh/lhie1/Rules@master/Clash/Provider/Reject.yaml
+    path: ./Rules/Reject
+    interval: 86400
+  Special:
+    type: http
+    behavior: classical
+    url: https://cdn.jsdelivr.net/gh/lhie1/Rules@master/Clash/Provider/Special.yaml
+    path: ./Rules/Special
+    interval: 86400
+  Netflix:
+    type: http
+    behavior: classical
+    url: https://cdn.jsdelivr.net/gh/lhie1/Rules@master/Clash/Provider/Media/Netflix.yaml
+    path: ./Rules/Media/Netflix
+    interval: 86400
+  Spotify:
+    type: http
+    behavior: classical
+    url: https://cdn.jsdelivr.net/gh/lhie1/Rules@master/Clash/Provider/Media/Spotify.yaml
+    path: ./Rules/Media/Spotify
+    interval: 86400
+  YouTube:
+    type: http
+    behavior: classical
+    url: https://cdn.jsdelivr.net/gh/lhie1/Rules@master/Clash/Provider/Media/YouTube.yaml
+    path: ./Rules/Media/YouTube
+    interval: 86400
+  Bilibili:
+    type: http
+    behavior: classical
+    url: https://cdn.jsdelivr.net/gh/lhie1/Rules@master/Clash/Provider/Media/Bilibili.yaml
+    path: ./Rules/Media/Bilibili
+    interval: 86400
+  IQ:
+    type: http
+    behavior: classical
+    url: https://cdn.jsdelivr.net/gh/lhie1/Rules@master/Clash/Provider/Media/IQ.yaml
+    path: ./Rules/Media/IQI
+    interval: 86400
+  IQIYI:
+    type: http
+    behavior: classical
+    url: https://cdn.jsdelivr.net/gh/lhie1/Rules@master/Clash/Provider/Media/IQIYI.yaml
+    path: ./Rules/Media/IQYI
+    interval: 86400
+  HBO Go:
+    type: http
+    behavior: classical
+    url: https://cdn.jsdelivr.net/gh/lhie1/Rules@master/Clash/Provider/Media/HBO%20Go.yaml
+    path: ./Rules/Media/HBO_Go
+    interval: 86400
+  Letv:
+    type: http
+    behavior: classical
+    url: https://cdn.jsdelivr.net/gh/lhie1/Rules@master/Clash/Provider/Media/Letv.yaml
+    path: ./Rules/Media/Letv
+    interval: 86400
+  Netease Music:
+    type: http
+    behavior: classical
+    url: https://cdn.jsdelivr.net/gh/lhie1/Rules@master/Clash/Provider/Media/Netease%20Music.yaml
+    path: ./Rules/Media/Netease_Music
+    interval: 86400
+  Tencent Video:
+    type: http
+    behavior: classical
+    url: https://cdn.jsdelivr.net/gh/lhie1/Rules@master/Clash/Provider/Media/Tencent%20Video.yaml
+    path: ./Rules/Media/Tencent_Video
+    interval: 86400
+  Youku:
+    type: http
+    behavior: classical
+    url: https://cdn.jsdelivr.net/gh/lhie1/Rules@master/Clash/Provider/Media/Youku.yaml
+    path: ./Rules/Media/Youku
+    interval: 86400
+  WeTV:
+    type: http
+    behavior: classical
+    url: https://cdn.jsdelivr.net/gh/lhie1/Rules@master/Clash/Provider/Media/WeTV.yaml
+    path: ./Rules/Media/WeTV
+    interval: 86400
+  ABC:
+    type: http
+    behavior: classical
+    url: https://cdn.jsdelivr.net/gh/lhie1/Rules@master/Clash/Provider/Media/ABC.yaml
+    path: ./Rules/Media/ABC
+    interval: 86400
+  Abema TV:
+    type: http
+    behavior: classical
+    url: https://cdn.jsdelivr.net/gh/lhie1/Rules@master/Clash/Provider/Media/Abema%20TV.yaml
+    path: ./Rules/Media/Abema_TV
+    interval: 86400
+  Amazon:
+    type: http
+    behavior: classical
+    url: https://cdn.jsdelivr.net/gh/lhie1/Rules@master/Clash/Provider/Media/Amazon.yaml
+    path: ./Rules/Media/Amazon
+    interval: 86400
+  Apple News:
+    type: http
+    behavior: classical
+    url: https://cdn.jsdelivr.net/gh/lhie1/Rules@master/Clash/Provider/Media/Apple%20News.yaml
+    path: ./Rules/Media/Apple_News
+    interval: 86400
+  Apple TV:
+    type: http
+    behavior: classical
+    url: https://cdn.jsdelivr.net/gh/lhie1/Rules@master/Clash/Provider/Media/Apple%20TV.yaml
+    path: ./Rules/Media/Apple_TV
+    interval: 86400
+  Bahamut:
+    type: http
+    behavior: classical
+    url: https://cdn.jsdelivr.net/gh/lhie1/Rules@master/Clash/Provider/Media/Bahamut.yaml
+    path: ./Rules/Media/Bahamut
+    interval: 86400
+  BBC iPlayer:
+    type: http
+    behavior: classical
+    url: https://cdn.jsdelivr.net/gh/lhie1/Rules@master/Clash/Provider/Media/BBC%20iPlayer.yaml
+    path: ./Rules/Media/BBC_iPlayer
+    interval: 86400
+  DAZN:
+    type: http
+    behavior: classical
+    url: https://cdn.jsdelivr.net/gh/lhie1/Rules@master/Clash/Provider/Media/DAZN.yaml
+    path: ./Rules/Media/DAZN
+    interval: 86400
+  Discovery Plus:
+    type: http
+    behavior: classical
+    url: https://cdn.jsdelivr.net/gh/lhie1/Rules@master/Clash/Provider/Media/Discovery%20Plus.yaml
+    path: ./Rules/Media/Discovery_Plus
+    interval: 86400
+  Disney Plus:
+    type: http
+    behavior: classical
+    url: https://cdn.jsdelivr.net/gh/lhie1/Rules@master/Clash/Provider/Media/Disney%20Plus.yaml
+    path: ./Rules/Media/Disney_Plus
+    interval: 86400
+  encoreTVB:
+    type: http
+    behavior: classical
+    url: https://cdn.jsdelivr.net/gh/lhie1/Rules@master/Clash/Provider/Media/encoreTVB.yaml
+    path: ./Rules/Media/encoreTVB
+    interval: 86400
+  Fox Now:
+    type: http
+    behavior: classical
+    url: https://cdn.jsdelivr.net/gh/lhie1/Rules@master/Clash/Provider/Media/Fox%20Now.yaml
+    path: ./Rules/Media/Fox_Now
+    interval: 86400
+  Fox+:
+    type: http
+    behavior: classical
+    url: https://cdn.jsdelivr.net/gh/lhie1/Rules@master/Clash/Provider/Media/Fox%2B.yaml
+    path: ./Rules/Media/Fox+
+    interval: 86400
+  HBO Max:
+    type: http
+    behavior: classical
+    url: https://cdn.jsdelivr.net/gh/lhie1/Rules@master/Clash/Provider/Media/HBO%20Max.yaml
+    path: ./Rules/Media/HBO_Max
+    interval: 86400
+  Hulu Japan:
+    type: http
+    behavior: classical
+    url: https://cdn.jsdelivr.net/gh/lhie1/Rules@master/Clash/Provider/Media/Hulu%20Japan.yaml
+    path: ./Rules/Media/Hulu_Japan
+    interval: 86400
+  Hulu:
+    type: http
+    behavior: classical
+    url: https://cdn.jsdelivr.net/gh/lhie1/Rules@master/Clash/Provider/Media/Hulu.yaml
+    path: ./Rules/Media/Hulu
+    interval: 86400
+  Japonx:
+    type: http
+    behavior: classical
+    url: https://cdn.jsdelivr.net/gh/lhie1/Rules@master/Clash/Provider/Media/Japonx.yaml
+    path: ./Rules/Media/Japonx
+    interval: 86400
+  JOOX:
+    type: http
+    behavior: classical
+    url: https://cdn.jsdelivr.net/gh/lhie1/Rules@master/Clash/Provider/Media/JOOX.yaml
+    path: ./Rules/Media/JOOX
+    interval: 86400
+  KKBOX:
+    type: http
+    behavior: classical
+    url: https://cdn.jsdelivr.net/gh/lhie1/Rules@master/Clash/Provider/Media/KKBOX.yaml
+    path: ./Rules/Media/KKBOX
+    interval: 86400
+  KKTV:
+    type: http
+    behavior: classical
+    url: https://cdn.jsdelivr.net/gh/lhie1/Rules@master/Clash/Provider/Media/KKTV.yaml
+    path: ./Rules/Media/KKTV
+    interval: 86400
+  Line TV:
+    type: http
+    behavior: classical
+    url: https://cdn.jsdelivr.net/gh/lhie1/Rules@master/Clash/Provider/Media/Line%20TV.yaml
+    path: ./Rules/Media/Line_TV
+    interval: 86400
+  myTV SUPER:
+    type: http
+    behavior: classical
+    url: https://cdn.jsdelivr.net/gh/lhie1/Rules@master/Clash/Provider/Media/myTV%20SUPER.yaml
+    path: ./Rules/Media/myTV_SUPER
+    interval: 86400
+  Pandora:
+    type: http
+    behavior: classical
+    url: https://cdn.jsdelivr.net/gh/lhie1/Rules@master/Clash/Provider/Media/Pandora.yaml
+    path: ./Rules/Media/Pandora
+    interval: 86400
+  PBS:
+    type: http
+    behavior: classical
+    url: https://cdn.jsdelivr.net/gh/lhie1/Rules@master/Clash/Provider/Media/PBS.yaml
+    path: ./Rules/Media/PBS
+    interval: 86400
+  Pornhub:
+    type: http
+    behavior: classical
+    url: https://cdn.jsdelivr.net/gh/lhie1/Rules@master/Clash/Provider/Media/Pornhub.yaml
+    path: ./Rules/Media/Pornhub
+    interval: 86400
+  Soundcloud:
+    type: http
+    behavior: classical
+    url: https://cdn.jsdelivr.net/gh/lhie1/Rules@master/Clash/Provider/Media/Soundcloud.yaml
+    path: ./Rules/Media/Soundcloud
+    interval: 86400
+  ViuTV:
+    type: http
+    behavior: classical
+    url: https://cdn.jsdelivr.net/gh/lhie1/Rules@master/Clash/Provider/Media/ViuTV.yaml
+    path: ./Rules/Media/ViuTV
+    interval: 86400
+  Telegram:
+    type: http
+    behavior: classical
+    url: https://cdn.jsdelivr.net/gh/lhie1/Rules@master/Clash/Provider/Telegram.yaml
+    path: ./Rules/Telegram
+    interval: 86400
+  Steam:
+    type: http
+    behavior: classical
+    url: https://cdn.jsdelivr.net/gh/lhie1/Rules@master/Clash/Provider/Steam.yaml
+    path: ./Rules/Steam
+    interval: 86400
+  Speedtest:
+    type: http
+    behavior: classical
+    url: https://cdn.jsdelivr.net/gh/lhie1/Rules@master/Clash/Provider/Speedtest.yaml
+    path: ./Rules/Speedtest
+    interval: 86400
+  PayPal:
+    type: http
+    behavior: classical
+    url: https://cdn.jsdelivr.net/gh/lhie1/Rules@master/Clash/Provider/PayPal.yaml
+    path: ./Rules/PayPal
+    interval: 86400
+  Microsoft:
+    type: http
+    behavior: classical
+    url: https://cdn.jsdelivr.net/gh/lhie1/Rules@master/Clash/Provider/Microsoft.yaml
+    path: ./Rules/Microsoft
+    interval: 86400
+  PROXY:
+    type: http
+    behavior: classical
+    url: https://cdn.jsdelivr.net/gh/lhie1/Rules@master/Clash/Provider/Proxy.yaml
+    path: ./Rules/Proxy
+    interval: 86400
+  Domestic:
+    type: http
+    behavior: classical
+    url: https://cdn.jsdelivr.net/gh/lhie1/Rules@master/Clash/Provider/Domestic.yaml
+    path: ./Rules/Domestic
+    interval: 86400
+  Apple:
+    type: http
+    behavior: classical
+    url: https://cdn.jsdelivr.net/gh/lhie1/Rules@master/Clash/Provider/Apple.yaml
+    path: ./Rules/Apple
+    interval: 86400
+  Google FCM:
+    type: http
+    behavior: classical
+    url: https://cdn.jsdelivr.net/gh/lhie1/Rules@master/Clash/Provider/Google%20FCM.yaml
+    path: ./Rules/Google FCM
+    interval: 86400
+  Scholar:
+    type: http
+    behavior: classical
+    url: https://cdn.jsdelivr.net/gh/lhie1/Rules@master/Clash/Provider/Scholar.yaml
+    path: ./Rules/Scholar
+    interval: 86400
+  Domestic IPs:
+    type: http
+    behavior: ipcidr
+    url: https://cdn.jsdelivr.net/gh/lhie1/Rules@master/Clash/Provider/Domestic%20IPs.yaml
+    path: ./Rules/Domestic_IPs
+    interval: 86400
+  LAN:
+    type: http
+    behavior: classical
+    url: https://cdn.jsdelivr.net/gh/lhie1/Rules@master/Clash/Provider/LAN.yaml
+    path: ./Rules/LAN
+    interval: 86400
 proxies:
-  - {name: gia, server: gia.bixjun.cf, port: 8002, type: trojan, password: FQBfLpyDRz, sni: gia.bixjun.cf, skip-cert-verify: true}
-  - {name: iij, server: iij.bixjun.cf, port: 8101, type: trojan, password: IICn4TSDgv, sni: iij.bixjun.cf, skip-cert-verify: true}
-  - {name: osaka, server: osaka.bixjun.cf, port: 8001, type: trojan, password: KqPkB9cNWL, sni: osaka.bixjun.cf, skip-cert-verify: true}
-  - {name: aliyun, server: aliyunhk.bixjun.cf, port: 8002, type: trojan, password: kM4i70Bw4q, sni: aliyunhk.bixjun.cf, skip-cert-verify: true}
-  - {name: virmach, server: vir4.bixjun.cf, port: 8004, type: trojan, password: E1FxUFwned, sni: vir4.bixjun.cf, skip-cert-verify: true}
-  - {name: licloud, server: li.bixjun.cf, port: 443, type: trojan, password: 33X3UPjGtA, sni: li.bixjun.cf, skip-cert-verify: true}
-  - {name: spart, server: spart.bixjun.cf, port: 8102, type: trojan, password: MqjLrjuWuR, sni: spart.bixjun.cf, skip-cert-verify: true}
+  - {name: gia, server: gia.bixjun.cf, port: 8002, type: trojan, password: FQBfLpyDRz, sni: gia.bixjun.cf, skip-cert-verify: false}
+  - {name: iij, server: iij.bixjun.cf, port: 8101, type: trojan, password: IICn4TSDgv, sni: iij.bixjun.cf, skip-cert-verify: false}
+  - {name: osaka, server: osaka.bixjun.cf, port: 8001, type: trojan, password: KqPkB9cNWL, sni: osaka.bixjun.cf, skip-cert-verify: false}
+  - {name: aliyun, server: aliyunhk.bixjun.cf, port: 8002, type: trojan, password: kM4i70Bw4q, sni: aliyunhk.bixjun.cf, skip-cert-verify: false}
+  - {name: virmach, server: vir4.bixjun.cf, port: 8004, type: trojan, password: E1FxUFwned, sni: vir4.bixjun.cf, skip-cert-verify: false}
+  - {name: licloud, server: li.bixjun.cf, port: 443, type: trojan, password: 33X3UPjGtA, sni: li.bixjun.cf, skip-cert-verify: false}
+  - {name: spart, server: spart.bixjun.cf, port: 8102, type: trojan, password: MqjLrjuWuR, sni: spart.bixjun.cf, skip-cert-verify: false}
   - {name: aliyun_vmess, server: aliyunhk.bixjun.cf, port: 8004, type: vmess, uuid: 1b77f471-e9df-4ec6-effb-c5a5164f4126, alterId: 0, cipher: auto, tls: true, skip-cert-verify: false, udp: true}
-
 proxy-groups:
-  - name: 🔰 节点选择
+  - name: 🚀 节点选择
     type: select
     proxies:
       - ♻️ 自动选择
+      - DIRECT
       - gia
       - iij
       - osaka
@@ -83,11 +421,12 @@ proxy-groups:
       - licloud
       - spart
       - aliyun_vmess
-  - name: 🌍 全球加速
+  - name: 🌍 国外媒体
     type: select
     proxies:
+      - 🚀 节点选择
       - ♻️ 自动选择
-      - 🔰 节点选择
+      - 🎯 直连政策
       - gia
       - iij
       - osaka
@@ -96,31 +435,11 @@ proxy-groups:
       - licloud
       - spart
       - aliyun_vmess
-  - name: 🎯 国内应用
-    type: select
-    proxies:
-      - DIRECT
-      - ♻️ 自动选择
-      - 🔰 节点选择
   - name: 📲 电报信息
     type: select
     proxies:
-      - ♻️ 自动选择
-      - 🔰 节点选择
-  - name: 🍎 苹果服务
-    type: select
-    proxies:
-      - DIRECT
-      - REJECT
-      - ♻️ 自动选择
-      - 🔰 节点选择
-  - name: 💰 paypal
-    type: select
-    proxies:
-      - ♻️ 自动选择
-      - 🔰 节点选择
-      - DIRECT
-      - REJECT
+      - 🚀 节点选择
+      - 🎯 直连政策
       - gia
       - iij
       - osaka
@@ -129,170 +448,46 @@ proxy-groups:
       - licloud
       - spart
       - aliyun_vmess
-  - name: 🎯 全球直连
+  - name: 🍎 苹果服务
+    type: select
+    proxies:
+      - 🚀 节点选择
+      - 🎯 直连政策
+      - gia
+      - iij
+      - osaka
+      - aliyun
+      - virmach
+      - licloud
+      - spart
+      - aliyun_vmess
+  - name: 🎯 直连政策
     type: select
     proxies:
       - DIRECT
+      - 🚀 节点选择
       - ♻️ 自动选择
-      - 🔰 节点选择
-  - name: 🛑 广告拦截
+  - name: 🛑 全球拦截
     type: select
     proxies:
       - REJECT
       - DIRECT
-      - ♻️ 自动选择
-      - 🔰 节点选择
-  - name: 🐟 漏网之鱼
+  - name: 🆎 广告拦截
     type: select
     proxies:
-      - ♻️ 自动选择
-      - 🔰 节点选择
-      - DIRECT
       - REJECT
-
-rule-providers:
-  adblock:
-    behavior: "domain"
-    type: http
-    url: "https://raw.githubusercontent.com/Loyalsoldier/clash-rules/release/reject.txt"
-    interval: 3600
-    path: ./ruleset/adblock.yaml
-  apple:
-    behavior: "domain"
-    type: http
-    url: "https://raw.githubusercontent.com/Loyalsoldier/clash-rules/release/apple.txt"
-    interval: 3600
-    path: ./ruleset/apple.yaml
-  icloud:
-    type: http
-    behavior: domain
-    url: "https://cdn.jsdelivr.net/gh/Loyalsoldier/clash-rules@release/icloud.txt"
-    path: ./ruleset/icloud.yaml
-    interval: 86400
-  google:
-    behavior: "domain"
-    type: http
-    url: "https://raw.githubusercontent.com/Loyalsoldier/clash-rules/release/google.txt"
-    interval: 3600
-    path: ./ruleset/Google.yaml
-  outside:
-    behavior: "domain"
-    type: http
-    url: "https://raw.githubusercontent.com/Loyalsoldier/clash-rules/release/proxy.txt"
-    interval: 3600
-    path: ./ruleset/outside.yaml
-  telegramcidr:
-    type: http
-    behavior: ipcidr
-    url: "https://raw.githubusercontent.com/Loyalsoldier/clash-rules/release/telegramcidr.txt"
-    path: ./ruleset/telegramcidr.yaml
-    interval: 86400
-  greatfire:
-    type: http
-    behavior: domain
-    url: "https://cdn.jsdelivr.net/gh/Loyalsoldier/clash-rules@release/greatfire.txt"
-    path: ./ruleset/greatfire.yaml
-    interval: 86400
-  gfw:
-    type: http
-    behavior: domain
-    url: "https://cdn.jsdelivr.net/gh/Loyalsoldier/clash-rules@release/gfw.txt"
-    path: ./ruleset/gfw.yaml
-    interval: 86400
-  tld-not-cn:
-    type: http
-    behavior: domain
-    url: "https://cdn.jsdelivr.net/gh/Loyalsoldier/clash-rules@release/tld-not-cn.txt"
-    path: ./ruleset/tld-not-cn.yaml
-    interval: 86400
-  direct:
-    behavior: "domain"
-    type: http
-    url: "https://raw.githubusercontent.com/Loyalsoldier/clash-rules/release/direct.txt"
-    interval: 3600
-    path: ./ruleset/direct.yaml
-  cncidr:
-    type: http
-    behavior: ipcidr
-    url: "https://cdn.jsdelivr.net/gh/Loyalsoldier/clash-rules@release/cncidr.txt"
-    path: ./ruleset/cncidr.yaml
-    interval: 86400
-  lancidr:
-    type: http
-    behavior: ipcidr
-    url: "https://cdn.jsdelivr.net/gh/Loyalsoldier/clash-rules@release/lancidr.txt"
-    path: ./ruleset/lancidr.yaml
-    interval: 86400
-  applications:
-    type: http
-    behavior: classical
-    url: "https://cdn.jsdelivr.net/gh/Loyalsoldier/clash-rules@release/applications.txt"
-    path: ./ruleset/applications.yaml
-    interval: 86400
-
-rules:
- - DOMAIN-SUFFIX,local,DIRECT
- - DOMAIN,clash.razord.top,DIRECT
- - DOMAIN,yacd.haishan.me,DIRECT
- - IP-CIDR,192.168.0.0/16,🎯 全球直连,no-resolve
- - IP-CIDR,10.0.0.0/8,🎯 全球直连,no-resolve
- - IP-CIDR,172.16.0.0/12,🎯 全球直连,no-resolve
- - IP-CIDR,127.0.0.0/8,🎯 全球直连,no-resolve
- - IP-CIDR,100.64.0.0/10,🎯 全球直连,no-resolve
- - IP-CIDR6,::1/128,🎯 全球直连,no-resolve
- - IP-CIDR6,fc00::/7,🎯 全球直连,no-resolve
- - IP-CIDR6,fe80::/10,🎯 全球直连,no-resolve
- - IP-CIDR6,fd00::/8,🎯 全球直连,no-resolve
- - DOMAIN,i.snssdk.com,🛑 广告拦截
- - DOMAIN,i-lq.snssdk.com,🛑 广告拦截
- - DOMAIN,dig.bdurl.net,🛑 广告拦截
- - DOMAIN,api-access.pangolin-sdk-toutiao.com,🛑 广告拦截
- - DOMAIN-SUFFIX,zijieapi.com,🛑 广告拦截
- - DOMAIN-SUFFIX,pglstatp-toutiao.com,🛑 广告拦截
- - DOMAIN-SUFFIX,pstatp.com,🛑 广告拦截
- - DOMAIN-SUFFIX,xwuad.com,🛑 广告拦截
- - DOMAIN-SUFFIX,tobapplog.ctobsnssdk.com,🛑 广告拦截
- - DOMAIN-SUFFIX,render.shuqireader.com,🛑 广告拦截
- - DOMAIN-SUFFIX,ali-stats.jpush.cn,🛑 广告拦截
- - DOMAIN-SUFFIX,toblog.ctobsnssdk.com,🛑 广告拦截
- - DOMAIN-SUFFIX,sdk.kaijia.com,🛑 广告拦截
- - DOMAIN-SUFFIX,tobapplog.ctobsnssdk.com,🛑 广告拦截
- - DOMAIN-SUFFIX,amdc.m.taobao.com,🛑 广告拦截
- - DOMAIN-SUFFIX,iyes.youku.com,🛑 广告拦截
- - DOMAIN-SUFFIX,sq.sljkj.com,🛑 广告拦截
- - DOMAIN-SUFFIX,s2s.adjust.com,🛑 广告拦截
- - DOMAIN,app.zhoudamozi.com,🎯 全球直连
- - DOMAIN-SUFFIX,youzibank.com,🎯 全球直连
- - DOMAIN,book.jieshengdz.com,🎯 全球直连
- - DOMAIN,tttxt.douyinxiaocx.com,🎯 全球直连
- - DOMAIN,dm.bytedance.com,🛑 广告拦截
- - DOMAIN,ap.cpatrk.net,🛑 广告拦截
- - DOMAIN,is.snssdk.com,🛑 广告拦截
- - DOMAIN-SUFFIX,mituyuedu.com,🎯 全球直连
- - DOMAIN,img.allahall.com,🎯 全球直连
- - DOMAIN,img.dailmo.com,🎯 全球直连
- - DOMAIN,img.img.hbssdlcl.com,🎯 全球直连
- - DOMAIN,activation.crossutility.com,🎯 全球直连
- - DOMAIN,bid.adview.cn,🛑 广告拦截
- - DOMAIN-KEYWORD,aria2,🎯 全球直连
- - DOMAIN-KEYWORD,xunlei,🎯 全球直连
- - DOMAIN-KEYWORD,yunpan,🎯 全球直连
- - DOMAIN-KEYWORD,Thunder,🎯 全球直连
- - DOMAIN-KEYWORD,XLLiveUD,🎯 全球直连
- - DOMAIN-KEYWORD,paypal,💰 paypal
- - DOMAIN-SUFFIX,paypal.com,💰 paypal
- - RULE-SET,adblock,🛑 广告拦截
- - RULE-SET,apple,🍎 苹果服务
- - RULE-SET,icloud,🍎 苹果服务
- - RULE-SET,google,🌍 全球加速
- - RULE-SET,outside,🌍 全球加速
- - RULE-SET,telegramcidr,📲 电报信息
- - RULE-SET,greatfire,🌍 全球加速
- - RULE-SET,gfw,🌍 全球加速
- - RULE-SET,tld-not-cn,🌍 全球加速
- - RULE-SET,direct,🎯 全球直连
- - RULE-SET,cncidr,🎯 全球直连
- - RULE-SET,lancidr,🎯 全球直连
- - RULE-SET,applications,🎯 国内应用
- - GEOIP,CN,DIRECT
- - MATCH,🐟 漏网之鱼
+      - DIRECT
+  - name: 🐟 兜底政策
+    type: select
+    proxies:
+      - 🚀 节点选择
+      - 🎯 直连政策
+      - ♻️ 自动选择
+      - gia
+      - iij
+      - osaka
+      - aliyun
+      - virmach
+      - licloud
+      - spart
+      - aliyun_vmess
