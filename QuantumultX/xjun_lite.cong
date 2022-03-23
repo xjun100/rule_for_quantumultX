@@ -235,10 +235,7 @@ https://raw.githubusercontent.com/DivineEngine/Profiles/master/Quantumult/Rewrit
 [server_local]
 # Optional field tls13 is only for shadowsocks obfs=wss
 #手动添加节点配置
-vmess = gia.bixjun.cf:8004, method=chacha20-ietf-poly1305, password=b7f0638e7-3f83-4ed0-886f-7bfcc277c86e, obfs=over-tls, obfs-host=gia.bixjun.cf, fast-open=false, tag=us
-vmess = iij.bixjun.cf:443, method=chacha20-ietf-poly1305, password=b1f35e1e5-af92-40f5-836f-f94197cd3468, obfs=over-tls, obfs-host=iij.bixjun.cf, fast-open=false, tag=tokyo
-vmess = osaka.bixjun.cf:443, method=chacha20-ietf-poly1305, password=b76d961c4-6599-4b6e-d08f-d7aa36fc0e90, obfs=over-tls, obfs-host=osaka.bixjun.cf, fast-open=false, tag=osaka
-vmess = aliyunhk.bixjun.cf:8004, method=chacha20-ietf-poly1305, password=b1b77f471-e9df-4ec6-effb-c5a5164f4126, obfs=over-tls, obfs-host=aliyunhk.bixjun.cf, fast-open=false, tag=hongkong
+
 
 ;shadowsocks=example.com:80, method=chacha20, password=pwd, obfs=http, obfs-host=bing.com, obfs-uri=/resource/file, fast-open=false, udp-relay=false, server_check_url=http://www.apple.com/generate_204, tag=ss-01
 ;shadowsocks=example.com:80, method=chacha20, password=pwd, obfs=http, obfs-host=bing.com, obfs-uri=/resource/file, fast-open=false, udp-relay=false, tag=ss-02
