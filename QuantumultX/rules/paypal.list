@@ -1,0 +1,8 @@
+HOST-SUFFIX,paypal.com,paypal
+HOST-KEYWORD,paypal,paypal
+USER-AGENT,*paypal*,paypal
+IP-CIDR,64.4.240.0/21,paypal
+IP-CIDR,64.4.248.0/22,paypal
+IP-CIDR,66.211.168.0/22,paypal
+IP-CIDR,91.243.72.0/23,paypal
+IP-CIDR,173.0.80.0/20,paypal
